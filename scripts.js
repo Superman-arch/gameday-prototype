@@ -17,11 +17,13 @@ document.getElementById("socialFeedBtn").addEventListener("click", function() {
 });
 
 function toggleSections(sectionId) {
+    // Hide all sections
     const sections = document.querySelectorAll(".section");
     sections.forEach(section => {
         section.style.display = "none";
     });
 
+    // Show the selected section
     const activeSection = document.getElementById(sectionId);
     activeSection.style.display = "block";
     setTimeout(() => {
@@ -29,6 +31,7 @@ function toggleSections(sectionId) {
     }, 10);  // Add slight delay for opacity transition
 }
 
+// Function to handle earning points
 function earnPoints() {
     points += 10;
     document.getElementById("pointsCount").textContent = points;
@@ -37,6 +40,7 @@ function earnPoints() {
     alert("Challenge completed! You earned 10 points!");
 }
 
+// Function to redeem points
 function redeemPoints() {
     if (points >= 50) {
         points -= 50;
@@ -47,6 +51,7 @@ function redeemPoints() {
     }
 }
 
+// Function to handle feedback submission
 function submitFeedback() {
     const feedback = document.getElementById("feedbackInput").value;
     if (feedback) {
